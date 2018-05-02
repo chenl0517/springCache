@@ -11,11 +11,10 @@ public class StudentService {
 	        stus.put(1, new Student("zhangsan",100));
 	        stus.put(2, new Student("lisi", 106));
 	    };
-	     
 	    /**
-	     * 根据参数对返回值进行缓存
+	     *condition 鐢ㄦ潵娣诲姞缂撳瓨鏉′欢 
 	     */
-	    @Cacheable(value="students")
+	    @Cacheable(value="students",condition="#id<2")
 	    public Student getStudent(int id){
 	        System.out.println("getStudent: " + id);
 	        return stus.get(id);
