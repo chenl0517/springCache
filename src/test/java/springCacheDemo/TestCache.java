@@ -11,10 +11,15 @@ public class TestCache {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         
         StudentService studentService = context.getBean(StudentService.class);
-        Student student1 = studentService.getStudent(1);
+        Student student1 = studentService.putStudent(1);
         System.out.println(student1);
-         
-        Student student2 = studentService.getStudent(1);
+        
+        //清缓存
+        //studentService.clearCache(1);
+        
+        Student student2 = studentService.putStudent(1);
         System.out.println(student2);
+        
+        
 	}
 }
